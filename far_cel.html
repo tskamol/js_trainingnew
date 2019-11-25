@@ -5,9 +5,16 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Калькулятор перевода градусов цельсия в градусы фарингейта</title>
     <script>
+
         function b() {
+            let absolute = -273;
             let a = +(document.getElementById("c").value);
-            const far = (9/5)*a+32;
+            if (a === absolute)
+                far = 0;
+                else if (a !== absolute)
+                    far = (9/5)*a+32;
+                else if (a <= -274);
+                    far = "Таких температур не бывает, наверное;)";
             document.querySelector('#result').textContent = far;
         }
 
