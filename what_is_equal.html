@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Калькулятор перевода градусов цельсия в градусы фарингейта</title>
+    <script>
+        function b() {
+            const admin = 1000 + "108";
+            document.querySelector('#result').textContent = admin;
+        }
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <nav class="">
+        <ul class="menu_style">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="far_cel.html">Градусу в фарингейт</a></li>
+            <li><a href="two__var.html">Две переменные</a></li>
+            <li><a href="what_is_equal.html">Чему будет равно</a></li>
+        </ul>
+    </nav>
+    <div class="faring">
+        <p class="faring__temp">*Чему будет равно JS-выражение 1000 + "108"? сейчас узнаем:)
+        </p>
+        <button onclick="b();" class="faring__button">Узнать</button>
+    </div>
+    Равняется <span id="result" class="faring__result"></span>
+</div>
+
+</body>
+</html>
