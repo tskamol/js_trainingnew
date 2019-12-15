@@ -15,6 +15,12 @@ function chess() {
         numbers_child.className = 'numbers__child';
         numbers.appendChild(numbers_child);
         numbers_child.innerHTML = number[d];
+
+        letters_child = document.createElement('div');
+        letters_child.className = 'child_letters';
+        letters.appendChild(letters_child);
+        letters_child.innerHTML = letterss[d];
+
     }
 
     for (let i =0; i<8;i++){
@@ -35,12 +41,12 @@ function chess() {
         }
 
     }
-    for(let c = 0;c<letterss.length;c++){
-    letters_child = document.createElement('div');
-    letters_child.className = 'child_letters';
-    letters.appendChild(letters_child);
-    letters_child.innerHTML = letterss[c];
-    }
+    // for(let c = 0;c<letterss.length;c++){
+    // letters_child = document.createElement('div');
+    // letters_child.className = 'child_letters';
+    // letters.appendChild(letters_child);
+    // letters_child.innerHTML = letterss[c];
+    // }
 
 }
 chess();
