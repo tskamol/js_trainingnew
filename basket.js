@@ -79,6 +79,8 @@ img__div.appendChild(p__furs);
 
 
 
+
+
     let col_furs = document.createElement('input');
 
     const PRODUCT_ID_KEY = 'data-product-id-key';
@@ -92,6 +94,10 @@ img__div.appendChild(p__furs);
     img__div.appendChild(col_furs);
 
 
+    let button_buy = document.createElement('button');
+    button_buy.textContent = 'купить';
+    img__div.appendChild(button_buy);
+    button_buy.setAttribute(PRODUCT_ID_KEY, product.AllProduct[i].id_product);
 }
 
 
@@ -109,13 +115,13 @@ button_furs.onclick = function() {
 
 
 const bas = document.createElement('div');
-for(let i=0;i<=basket.AllProduct.length;i++) {
-if (basket.AllProduct.length===0){
+
+if (basket.AllProduct.length===0)
     bas.textContent = ' Корзина пуста';
-}
+
 else
 bas.textContent = ' В вашей корзине ' + basket.coli_all() + ' товаров на сумму '  + basket.cart_total() + ' рублей ' ;
-}
+
 document.querySelector('body').appendChild(bas);
 
 
