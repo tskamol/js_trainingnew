@@ -9,6 +9,9 @@
   text-decoration: none;
   outline: none; }
 
+p {
+  margin-left: 10px; }
+
 .block {
   width: 70px;
   height: 70px;
@@ -51,10 +54,17 @@
   height: 300px; }
 
 .all__style {
-  display: flex; }
+  display: flex;
+  padding-top: 30px; }
 
 .input_furs {
   width: 100px;
-  height: 15px; }
+  height: 26px;
+  margin-left: 10px; }
+
+.button_style {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */
