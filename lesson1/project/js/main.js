@@ -15,12 +15,12 @@ const renderProduct = (title, price) => {
           </div>`;
 };
 
-const renderProducts = list => {
-  // const productList = list.map(product => renderProduct(product.title, product.price));
-  const productList = list.map(function (product) {
-    return renderProduct(product.title, product.price)
-  });
-  console.log(productList);
+const renderProducts = (list, title="Значение заголовка по умолчанию", price= "Значение прайс по умолчанию 0") => {
+  const productList = list.map(product => renderProduct(product.title, product.price)).join('');
+  // const productList = list.map(function (product) {
+  //   return renderProduct(product.title, product.price)
+  // });
+  // console.log(productList);
   document.querySelector('.products').innerHTML = productList;
 };
 
