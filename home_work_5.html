@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+<!--    <script async src="chess.js"></script>-->
+    <script async src="basket.js"></script>
+    <script>
+        // function factorial(n) {
+        //     let factory = 1;
+        //     for(let i = 1; i<=n;i++) factory *=i;
+        //     return factory;
+        // }
+        // console.log(factorial(5));
+
+        // function factorial(n) {
+        //     let factory = 1;
+        //     while (n){
+        //         factory *=n;
+        //         n--;
+        //     }
+        //     return factory;
+        // }
+        // console.log(factorial(3));
+    //     let points = [
+    //         {x:0,y:0},
+    //         {x:1,y:1}
+    //     ];
+    //
+    //     points.dist = function () {
+    //         let p1 = this[0];
+    //         let p2 = this [1];
+    //         let a = p2.x-p1.x;
+    //         let b = p2.y - p1.y;
+    //         return Math.sqrt(a*a+b*b);
+    //
+    //     }
+    // console.log(points.dist());
+
+       //  function Point(x,y) {
+       //      this.x = x;
+       //      this.y = y;
+       //  }
+       //  let p = new Point(1,1);
+       //  Point.prototype.r = function () {
+       //     return Math.sqrt(this.x*this.x+ this.y*this.y);
+       //  };
+       // console.log(p.r());
+        function debug(msg) {
+            var log = document.getElementById("debuglog");
+            if(!log){
+                log = document.createElement("div");
+                log.id = "debuglog";
+                log.innerHTML = '<h1>debug log</h1>';
+                document.body.appendChild(log);
+            }
+            var pre = document.createElement('pre');
+            var text = document.createTextNode(msg);
+            pre.appendChild(text);
+            log.appendChild(pre);
+        }
+        function hide(e, reflow) {
+        if(reflow){
+            e.style.display = 'none';
+        }else {
+            e.style.visibility = 'hidden';
+        }
+        function highlight(e) {
+            if(!e.className) e.className = 'hilite';
+            else e.className += 'hilite';
+
+        }
+
+        }
+        window.onload = function () {
+            var images = document.getElementsByTagName('img');
+            for (var i = 0; i<images.length; i++){
+                var image = images[i];
+                if(image.addEventListener) image.addEventListener('click', hide, false);
+                else image.attachEvent('onclick',hide);
+            }
+            function hide(event) {
+                event.target.style.visibility = 'hidden';
+
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<!--<div class="blockAll">-->
+<!--    <div class="letters"></div>-->
+<!--    <div class="main__block"></div>-->
+<!--    <div class="numbers"></div>-->
+<!--</div>-->
+<div class="bas">
+<!--    <script>-->
+<!--        function moveon() {-->
+<!--            let answer = confirm('Переходим на site bimmercat.com');-->
+<!--            if(answer) window.location = 'https://bimmercat.com/';-->
+<!--        }-->
+<!--        setTimeout(moveon,1000);-->
+<!--    </script>-->
+
+    <button onclick="hide(this, true); debug('hide button 1');">Hide1</button>
+    <button onclick="hide(this); debug('hide button 2');">Hide2</button>
+</div>
+
+
+</body>
+</html>
