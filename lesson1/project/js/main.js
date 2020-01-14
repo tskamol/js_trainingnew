@@ -38,7 +38,7 @@ render (){
                 <div class="desc">
                     <h3>${this.title}</h3>
                     <p>${this.price} \u20bd</p>
-                    <a href="">Купить</a>
+                    <a href="" class="data-id="${this.id}">Купить</a>
                 </div>
             </div>`;
 }
