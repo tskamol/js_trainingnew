@@ -84,13 +84,13 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
 //   });
 // }
 
-fetch('GET', 'google.com')
-    .then(function (data) {
-      console.log(data);
-    })
-    .catch(function (err) {
-      console.error(' error!', err.statusText);
-    });
+// fetch('GET', 'google.com')
+//     .then(function (data) {
+//       console.log(data);
+//     })
+//     .catch(function (err) {
+//       console.error(' error!', err.statusText);
+//     });
 
 class ProductList {
   constructor(container = '.products') {
@@ -103,6 +103,7 @@ class ProductList {
           this.render();
         });
     this.render();
+
   }
 
   // _fetchProducts() {
@@ -113,6 +114,8 @@ class ProductList {
   //     {id: 4, title: 'Gamepad', price: 4500},
   //   ];
   // }
+
+
 
   _getProducts() {
     return fetch(`${API}/catalogData.json`)
@@ -136,6 +139,7 @@ class ProductItem {
   this.price = product.price;
   this.id = product.id;
   this.img = img;
+  this.idItem();
   }
 render (){
  return `<div class="product-item" data-id="${this.id}">
@@ -147,10 +151,18 @@ render (){
                 </div>
             </div>`;
 }
+
+  idItem() {
+    for (let i = 0; i < list.allProducts.length; i++) {
+      const PRODUCT_ID_KEY = 'data-product-id-key';
+      let abuy = document.getElementsByTagName('a')
+      abuy.setAttribute(PRODUCT_ID_KEY, list.allProducts[i].id_product)
+    }
+  }
 }
 
 class basket {
-  constructor(product, img ='http://placehold.it/200x200' ) {
+  constructor(product, img = 'http://placehold.it/200x200') {
     this.allProducts = [];
     this.title = product.title;
     this.price = product.price;
@@ -158,19 +170,21 @@ class basket {
     this.render();
     this.GoodsList();
     this.Additem();
-  }
-  GoodsList() {
-    return this.allProducts.reduce((c, cartItem) => c += (cartItem.price)*(cartItem.coli), 0);
-  }
-  Additem() {
-     return function () {
 
-    }
+  }
+
+  GoodsList() {
+    return this.allProducts.reduce((c, cartItem) => c += (cartItem.price), 0);
+  }
+
+
+
+  Additem(){
+    let buttton = document.getElementById()
+
   }
 }
 const list = new ProductList();
-
-
 
 
 
